@@ -13,7 +13,7 @@ wf = Workflow(update_settings=update_settings)
 word = sys.argv[1]
 
 def getTransResult():
-    url = api_url+"?w="+soword+"&type=json&key="+app_key
+    url = api_url+"?w="+word+"&type=json&key="+app_key
     res = web.get(url)
     return res.json()
 
@@ -23,7 +23,6 @@ def genAlfred(data):
             title=u"am:[" + data['symbols'][0]['ph_am'] + "] ,en:["+data['symbols'][0]['ph_en']+"]",
             subtitle=u"phonic for " + word + "[by star]",
             arg=u"am:[" + data['symbols'][0]['ph_am'] + "] ,en:["+data['symbols'][0]['ph_en']+"]==="+data['symbols'][0]['ph_am_mp3'],
-            # arg=u"am:[" + data['symbols'][0]['ph_am'] + "] ,en:["+data['symbols'][0]['ph_en']+"]",
             valid=True,
             icon=ICON_DEFAULT)
         #mean
