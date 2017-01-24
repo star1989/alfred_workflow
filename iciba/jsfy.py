@@ -13,6 +13,9 @@ ICON_DEFAULT = 'icon.png'
 update_settings = {'version': '1.0.0', 'github_slug': 'star1989/alfred_workflow'}
 wf = Workflow(update_settings=update_settings)
 word = sys.argv[1]
+en_word_flag = u"word"
+zh_word_flag = u"chinese"
+delimiter = "="
 
 def getTransResult():
     url = api_url+"?w="+urllib.quote(word)+"&type=json&key="+app_key
@@ -29,7 +32,7 @@ def genAlfred(data):
             wf.add_item(
                 title=u"拼音:[" + data['symbols'][0]['word_symbol'] + "]",
                 subtitle=u"phonic for " + word.decode('utf-8') + "[by star]",
-                arg=u"拼音:[" + data['symbols'][0]['word_symbol'] + "]==="+mp3,
+                arg=u""+zh_word_flag+delimiter+word.decode('utf-8')+delimiter+"拼音:[".decode('utf-8') + data['symbols'][0]['word_symbol'] + "]"+delimiter+mp3,
                 valid=True,
                 icon=ICON_DEFAULT)
             for part in data['symbols'][0]['parts'][0]['means']:
@@ -38,7 +41,7 @@ def genAlfred(data):
                 wf.add_item(
                     title=cur_title,
                     subtitle=sub_title,
-                    arg=cur_title+"==="+data['symbols'][0]['symbol_mp3'],
+                    arg=u""+zh_word_flag+delimiter+word.decode('utf-8')+delimiter+cur_title+delimiter+data['symbols'][0]['symbol_mp3'],
                     valid=True,
                     icon=ICON_DEFAULT)
         else:
@@ -47,7 +50,7 @@ def genAlfred(data):
                 wf.add_item(
                     title=u"am:[" + data['symbols'][0]['ph_am'] + "] ,en:[" + data['symbols'][0]['ph_en'] + "]",
                     subtitle=u"phonic for " + word + "[by star]",
-                    arg=u"am:[" + data['symbols'][0]['ph_am'] + "] ,en:[" + data['symbols'][0]['ph_en'] + "]===" + data['symbols'][0]['ph_am_mp3'],
+                    arg=u""+ en_word_flag +delimiter+data['word_name']+delimiter+"am:[" + data['symbols'][0]['ph_am'] + "] ,en:[" + data['symbols'][0]['ph_en'] + "]"+ delimiter + data['symbols'][0]['ph_am_mp3'],
                     valid=True,
                     icon=ICON_DEFAULT)
             for part in data['symbols'][0]['parts']:
@@ -57,7 +60,7 @@ def genAlfred(data):
                 wf.add_item(
                     title=cur_title,
                     subtitle=sub_title,
-                    arg=cur_title + "===" + data['symbols'][0]['ph_am_mp3'],
+                    arg=u""+en_word_flag+delimiter+data['word_name']+delimiter+cur_title + delimiter + data['symbols'][0]['ph_am_mp3'],
                     valid=True,
                     icon=ICON_DEFAULT)
     else:
