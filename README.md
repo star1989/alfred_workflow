@@ -1,7 +1,7 @@
 # workflow
 
 ## 项目链接
-[https://github.com/star1989/star_workflow]()(https://github.com/star1989/star_workflow)
+[https://github.com/star1989/star_workflow](https://github.com/star1989/star_workflow)
 
 ## 金山翻译
 ### **功能:**
@@ -19,27 +19,27 @@
 
 ### 效果
 * 英文翻译
-![英文翻译截图]()(http://bimg.cxstars.com/2017-01-20-14848765913701.jpg)
+![英文翻译截图](http://bimg.cxstars.com/2017-01-20-14848765913701.jpg)
 
 * 中文翻译
-![中文翻译截图]()(http://bimg.cxstars.com/2017-01-21-14850042653066.jpg)
+![中文翻译截图](http://bimg.cxstars.com/2017-01-21-14850042653066.jpg)
 
 * 添加单词HOOK
-![添加单词HOOK图]()(http://bimg.cxstars.com/2017-01-25-14853523310481.jpg)
+![添加单词HOOK图](http://bimg.cxstars.com/2017-01-25-14853523310481.jpg)
 
 * 添加单词通知
-![添加单词通知]()(http://bimg.cxstars.com/2017-01-25-14853524781043.jpg)
+![添加单词通知](http://bimg.cxstars.com/2017-01-25-14853524781043.jpg)
 
 
 ### 金山API
 项目里我已经放上我自己的API KEY,方便跟我一样懒的道友们.
-不过也建议大家自行申请,非常方便.[金山词霸API]()(http://open.iciba.com/?c=api)
+不过也建议大家自行申请,非常方便.[金山词霸API](http://open.iciba.com/?c=api)
 修改文件`jsfy.py`:
 `app_key = "put your api key"`
 
 ## 参考资料
-* [Alfred-Workflow Python]()(http://www.deanishe.net/alfred-workflow/)
-* [Alfred office help]()(https://www.alfredapp.com/help/workflows/)
+* [Alfred-Workflow Python](http://www.deanishe.net/alfred-workflow/)
+* [Alfred office help](https://www.alfredapp.com/help/workflows/)
 
 ## ToDoList
 添加单词到单词本(v1.3:2017-01-25)~~
