@@ -8,6 +8,19 @@
 	<string>Tools</string>
 	<key>connections</key>
 	<dict>
+		<key>1D5A1187-6388-4DD5-B858-5C4FEB0C5168</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>41C4147C-6A00-4352-8B07-3A7E785C9A2B</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>3E2D560F-4876-4062-8FA0-0C85CA572241</key>
 		<array>
 			<dict>
@@ -21,11 +34,34 @@
 				<false/>
 			</dict>
 		</array>
+		<key>41C4147C-6A00-4352-8B07-3A7E785C9A2B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6AC6C013-8125-4C6B-82A3-6CDB5C820EDF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A63AAB64-178A-4549-9C9F-D08A45D30847</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C3C2F9BA-E6BF-4131-A57A-909907940254</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1D5A1187-6388-4DD5-B858-5C4FEB0C5168</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -78,6 +114,23 @@
 	<string>query_words</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>B339A220-64E6-4049-9B94-62EF62C8F406</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -135,23 +188,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>B204C7B1-9683-4B3A-A276-75F5AB5F1C9F</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>autopaste</key>
-				<false/>
-				<key>clipboardtext</key>
-				<string>{query}</string>
-				<key>transient</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.clipboard</string>
-			<key>uid</key>
-			<string>B339A220-64E6-4049-9B94-62EF62C8F406</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -226,11 +262,85 @@ echo -n $query</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>word=$1
+
+python push_word.py ${word}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1D5A1187-6388-4DD5-B858-5C4FEB0C5168</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>成功添加进单词本[by star]</string>
+				<key>title</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>6AC6C013-8125-4C6B-82A3-6CDB5C820EDF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string>0</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>41C4147C-6A00-4352-8B07-3A7E785C9A2B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>1D5A1187-6388-4DD5-B858-5C4FEB0C5168</key>
+		<dict>
+			<key>note</key>
+			<string>线上添加单词队列</string>
+			<key>xpos</key>
+			<integer>440</integer>
+			<key>ypos</key>
+			<integer>380</integer>
+		</dict>
 		<key>21A4A522-BE7A-4BED-9BB1-92B97B04E697</key>
 		<dict>
 			<key>note</key>
@@ -238,7 +348,7 @@ echo -n $query</string>
 			<key>xpos</key>
 			<integer>730</integer>
 			<key>ypos</key>
-			<integer>220</integer>
+			<integer>140</integer>
 		</dict>
 		<key>3E2D560F-4876-4062-8FA0-0C85CA572241</key>
 		<dict>
@@ -249,14 +359,28 @@ echo -n $query</string>
 			<key>ypos</key>
 			<integer>20</integer>
 		</dict>
+		<key>41C4147C-6A00-4352-8B07-3A7E785C9A2B</key>
+		<dict>
+			<key>xpos</key>
+			<integer>630</integer>
+			<key>ypos</key>
+			<integer>420</integer>
+		</dict>
+		<key>6AC6C013-8125-4C6B-82A3-6CDB5C820EDF</key>
+		<dict>
+			<key>xpos</key>
+			<integer>730</integer>
+			<key>ypos</key>
+			<integer>400</integer>
+		</dict>
 		<key>A63AAB64-178A-4549-9C9F-D08A45D30847</key>
 		<dict>
 			<key>note</key>
 			<string>过滤</string>
 			<key>xpos</key>
-			<integer>470</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>340</integer>
+			<integer>230</integer>
 		</dict>
 		<key>B204C7B1-9683-4B3A-A276-75F5AB5F1C9F</key>
 		<dict>
@@ -272,16 +396,16 @@ echo -n $query</string>
 			<key>xpos</key>
 			<integer>730</integer>
 			<key>ypos</key>
-			<integer>40</integer>
+			<integer>10</integer>
 		</dict>
 		<key>C3C2F9BA-E6BF-4131-A57A-909907940254</key>
 		<dict>
 			<key>note</key>
-			<string>添加单词队列</string>
+			<string>添加单词队列示例</string>
 			<key>xpos</key>
-			<integer>740</integer>
+			<integer>730</integer>
 			<key>ypos</key>
-			<integer>390</integer>
+			<integer>270</integer>
 		</dict>
 	</dict>
 	<key>webaddress</key>
