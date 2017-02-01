@@ -12,7 +12,7 @@
 # author by star
 import sys
 from workflow import Workflow
-from time import gmtime,strftime
+from time import strftime,localtime
 
 ICON_DEFAULT = 'icon.png'
 end = "[by star]"
@@ -21,7 +21,7 @@ def delZero(num):
     return num.replace("0","")
 
 def showTime():
-    now = gmtime()
+    now = localtime()
     full = strftime("%Y-%m-%d %H:%M:%S %A",now)
     date = strftime("%Y-%m-%d",now)
     time = strftime("%H:%M:%S",now)
