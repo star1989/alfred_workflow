@@ -66,7 +66,7 @@ def genAlfred(data):
     else:
         wf.add_item(title=u'error...',
                     subtitle=u"something has wrong...",
-                    arg=data['word_name'],
+                    arg=word,
                     valid=True,
                     icon=ICON_DEFAULT)
     wf.send_feedback()
