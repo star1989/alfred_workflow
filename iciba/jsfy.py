@@ -10,8 +10,6 @@ import urllib
 api_url = "http://dict-co.iciba.com/api/dictionary.php"
 app_key = "DB77106E3D56416869155B591C53C9C5"
 ICON_DEFAULT = 'icon.png'
-update_settings = {'version': '1.0.0', 'github_slug': 'star1989/alfred_workflow'}
-wf = Workflow(update_settings=update_settings)
 word = sys.argv[1]
 en_word_flag = u"word"
 zh_word_flag = u"chinese"
@@ -77,6 +75,6 @@ def main(wf):
     exit()
 
 if __name__ == u"__main__":
-    update_settings = {'version': '1.0.0','github_slug':'0.0.0'}
+    update_settings = {'version': '1.0.0','github_slug':'star1989/alfred_workflow'}
     wf = Workflow(update_settings=update_settings)
     sys.exit(wf.run(main))
